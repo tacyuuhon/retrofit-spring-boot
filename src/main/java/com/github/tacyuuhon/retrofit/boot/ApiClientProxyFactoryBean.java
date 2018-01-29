@@ -14,7 +14,7 @@ public class ApiClientProxyFactoryBean implements FactoryBean<Object> {
     Retrofit retrofit;
 
     @Override
-    public Object getObject() throws Exception {
+    public Object getObject() {
         return retrofit.create(interfaceClass);
     }
 
