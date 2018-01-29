@@ -4,5 +4,5 @@ import org.springframework.beans.factory.BeanFactory;
 
 public interface ApiClientSpringBeanFactoryAware {
 
-    public void setBeanFactory(BeanFactory beanFactory);
+    void setBeanFactory(BeanFactory beanFactory);
 }

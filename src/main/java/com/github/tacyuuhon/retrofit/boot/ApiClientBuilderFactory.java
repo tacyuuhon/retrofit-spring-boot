@@ -38,9 +38,7 @@ public class ApiClientBuilderFactory {
 
 
         if (properties.isIgnoreHostnameVerify()) {
-            okHttpClientBuilder.hostnameVerifier((hostname, session) -> {
-                return true;
-            });
+            okHttpClientBuilder.hostnameVerifier((hostname, session) -> true);
         }
 
         if (properties.isEnableRequestTraceLog()) {
@@ -52,9 +50,7 @@ public class ApiClientBuilderFactory {
         }
 
         if (ArrayUtils.isNotEmpty(interceptProcessors)) {
-            Arrays.stream(interceptProcessors).forEach(processor -> {
-                okHttpClientBuilder.addInterceptor(createInterceptProcessor(processor));
-            });
+            Arrays.stream(interceptProcessors).forEach(processor -> okHttpClientBuilder.addInterceptor(createInterceptProcessor(processor)));
         }
 
 
