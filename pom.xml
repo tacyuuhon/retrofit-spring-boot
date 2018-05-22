@@ -12,9 +12,9 @@
     </properties>
 
     <modules>
-        <module>retrofit-spring-boot-binder</module>
-        <module>retrofit-spring-boot-binder-springboot1</module>
-        <module>retrofit-spring-boot-binder-springboot2</module>
         <module>retrofit-spring-boot-core</module>
+        <module>binder/retrofit-spring-boot-binder</module>
+        <module>binder/retrofit-spring-boot-binder-springboot1</module>
+        <module>binder/retrofit-spring-boot-binder-springboot2</module>
     </modules>
 </project>
