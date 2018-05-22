@@ -2,13 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>com.github.tacyuuhon</groupId>
+        <artifactId>retrofit-spring-boot</artifactId>
+        <version>0.0.1</version>
+    </parent>
 
-    <groupId>com.github.tacyuuhon</groupId>
-    <artifactId>retrofit-spring-boot-binder-springboot2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <name>retrofit-spring-boot-core</name>
+    <artifactId>retrofit-spring-boot-binder-springboot2</artifactId>
+    <name>retrofit-spring-boot-binder-springboot2</name>
     <description>Retrofit for Spring Boot</description>
 
     <properties>
@@ -18,50 +21,14 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
 
-        <io.spring.platform.version>Brussels-SR6</io.spring.platform.version>
-        <okhttp3.version>3.8.0</okhttp3.version>
-        <com.squareup.retrofit2.version>2.3.0</com.squareup.retrofit2.version>
+        <io.spring.platform.version>Cairo-SR1</io.spring.platform.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.squareup.retrofit2</groupId>
-            <artifactId>retrofit</artifactId>
-            <version>${com.squareup.retrofit2.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.squareup.retrofit2</groupId>
-            <artifactId>converter-jackson</artifactId>
-            <version>${com.squareup.retrofit2.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>logging-interceptor</artifactId>
-            <version>${okhttp3.version}</version>
         </dependency>
 
         <dependency>
@@ -74,10 +41,11 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
+        
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
+            <groupId>com.github.tacyuuhon</groupId>
+            <artifactId>retrofit-spring-boot-binder</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
     </dependencies>
@@ -99,12 +67,6 @@
                 <version>${io.spring.platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp3.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

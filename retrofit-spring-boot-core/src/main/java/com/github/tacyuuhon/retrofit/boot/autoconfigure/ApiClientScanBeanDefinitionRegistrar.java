@@ -5,6 +5,7 @@ import com.github.tacyuuhon.retrofit.boot.ApiClientBuilderFactory;
 import com.github.tacyuuhon.retrofit.boot.ApiClientProxyFactoryBean;
 import com.github.tacyuuhon.retrofit.boot.annotation.ApiClient;
 import com.github.tacyuuhon.retrofit.boot.annotation.ApiClientScan;
+import com.github.tacyuuhon.retrofit.boot.binder.PropertiesBinderProviderFactory;
 import com.github.tacyuuhon.retrofit.boot.interceptor.ApiClientInterceptProcessor;
 import com.google.common.collect.Lists;
 import lombok.Setter;
@@ -15,14 +16,10 @@ import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.boot.bind.PropertySourcesPropertyValues;
-import org.springframework.boot.bind.RelaxedDataBinder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.StandardAnnotationMetadata;
@@ -57,21 +54,9 @@ public class ApiClientScanBeanDefinitionRegistrar implements ImportBeanDefinitio
     }
 
     private <T> T getProperties(Class<T> clazz) {
-        T properties = null;
 
         Assert.isAssignable(ApiClientBasicProperties.class, clazz);
-
-        try {
-
-            properties = clazz.newInstance();
-            String namePrefix = AnnotationUtils.findAnnotation(clazz, ConfigurationProperties.class).prefix();
-            RelaxedDataBinder binder = new RelaxedDataBinder(properties, namePrefix);
-            binder.bind(new PropertySourcesPropertyValues(((ConfigurableEnvironment) environment).getPropertySources()));
-
-        } catch (InstantiationException | IllegalAccessException ex) {
-            log.error(ex.getMessage(), ex);
-        }
-
+        T properties = PropertiesBinderProviderFactory.getPropertiesBinderProvider().getProperties(clazz, environment);
         log.info("Properties [{}] values: {}", clazz.getName(), properties);
 
         return properties;

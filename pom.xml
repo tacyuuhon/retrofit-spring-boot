@@ -1,16 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.tacyuuhon</groupId>
-  <artifactId>retrofit-spring-boot</artifactId>
-  <version>0.0.1</version>
-  <packaging>pom</packaging>
-  <name>retrofit-spring-boot</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.tacyuuhon</groupId>
+    <artifactId>retrofit-spring-boot</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+    <name>retrofit-spring-boot</name>
+  
+    <properties>
+        <revision>0.0.1</revision>
+    </properties>
 
-  <modules>
-    <module>retrofit-spring-boot-core</module>
-    <module>retrofit-spring-boot-binder</module>
-    <module>retrofit-spring-boot-binder-springboot1</module>
-    <module>retrofit-spring-boot-binder-springboot2</module>
-  </modules>
+    <modules>
+        <module>retrofit-spring-boot-binder</module>
+        <module>retrofit-spring-boot-binder-springboot1</module>
+        <module>retrofit-spring-boot-binder-springboot2</module>
+        <module>retrofit-spring-boot-core</module>
+    </modules>
 </project>

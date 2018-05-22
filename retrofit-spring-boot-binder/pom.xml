@@ -2,12 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.github.tacyuuhon</groupId>
-    <artifactId>retrofit-spring-boot-binder</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    
+    <parent>
+        <groupId>com.github.tacyuuhon</groupId>
+        <artifactId>retrofit-spring-boot</artifactId>
+        <version>0.0.1</version>
+    </parent>
+    
     <packaging>jar</packaging>
-
+    <artifactId>retrofit-spring-boot-binder</artifactId>
     <name>retrofit-spring-boot-binder</name>
     <description>Retrofit for Spring Boot Binder</description>
 
@@ -110,4 +113,5 @@
         </dependencies>
     </dependencyManagement>
 
+    <version>0.0.1</version>
 </project>

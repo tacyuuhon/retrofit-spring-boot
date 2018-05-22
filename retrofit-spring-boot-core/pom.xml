@@ -3,11 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.tacyuuhon</groupId>
-    <artifactId>retrofit-spring-boot-core</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <parent>
+        <groupId>com.github.tacyuuhon</groupId>
+        <artifactId>retrofit-spring-boot</artifactId>
+        <version>0.0.1</version>
+    </parent>
 
+    <artifactId>retrofit-spring-boot-core</artifactId>
+    <packaging>jar</packaging>
     <name>retrofit-spring-boot-core</name>
     <description>Retrofit for Spring Boot</description>
 
@@ -88,14 +91,14 @@
         
     </dependencies>
 
-    <build>
+<!--     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build> -->
 
     <dependencyManagement>
         <dependencies>
