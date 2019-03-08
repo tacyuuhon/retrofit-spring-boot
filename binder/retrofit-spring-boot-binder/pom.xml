@@ -23,7 +23,7 @@
 
         <io.spring.platform.version>Brussels-SR6</io.spring.platform.version>
         <okhttp3.version>3.8.0</okhttp3.version>
-        <com.squareup.retrofit2.version>2.3.0</com.squareup.retrofit2.version>
+        <com.squareup.retrofit2.version>[2.5.0,)</com.squareup.retrofit2.version>
     </properties>
 
     <dependencies>
